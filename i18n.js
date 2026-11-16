@@ -5,6 +5,7 @@ export const LANGS = { en: "English", ru: "Русский", uz: "Oʻzbekcha" };
 
 export const T = {
   en: {
+    signsMissing: "signs.json was not found, so only a built-in sample list is shown and recording is switched off. Put signs.json in the project folder (next to the collect folder), serve that folder, and reload.",
     appTitle: "Lingora data collection",
     lead: "Records hand landmark numbers (21 points per frame). The camera image is shown on screen only. It is never saved or sent anywhere.",
     camOff: "Camera is off.",
@@ -39,6 +40,7 @@ export const T = {
     restored: "Restored {n} frames from this browser. Export to keep them.",
   },
   ru: {
+    signsMissing: "Файл signs.json не найден, поэтому показан только встроенный пример списка, а запись отключена. Положите signs.json в папку проекта (рядом с папкой collect), запустите сервер из этой папки и перезагрузите страницу.",
     appTitle: "Lingora: сбор данных",
     lead: "Записывает числовые координаты ключевых точек руки (21 точка на кадр). Изображение с камеры показывается только на экране. Оно нигде не сохраняется и никуда не отправляется.",
     camOff: "Камера выключена.",
@@ -73,6 +75,7 @@ export const T = {
     restored: "Восстановлено кадров из этого браузера: {n}. Экспортируйте, чтобы сохранить их.",
   },
   uz: {
+    signsMissing: "signs.json fayli topilmadi, shu sababli faqat ichki namuna roʻyxat koʻrsatilmoqda va yozish oʻchirilgan. signs.json faylini loyiha papkasiga (collect papkasi yonida) joylang, serverni shu papkadan ishga tushiring va sahifani qayta yuklang.",
     appTitle: "Lingora: ma’lumotlarni yigʻish",
     lead: "Qoʻlning tayanch nuqtalari koordinatalarini raqamlar sifatida yozadi (har bir kadrda 21 ta nuqta). Kamera tasviri faqat ekranda koʻrsatiladi. U hech qayerda saqlanmaydi va hech qayerga yuborilmaydi.",
     camOff: "Kamera oʻchiq.",
