@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "note": "PLACEHOLDER vocabulary. Replace with the signs agreed with the consultant. Keep ids lowercase with underscores.",
+  "signs": [
+    { "id": "hello", "label": { "en": "Hello" } },
+    { "id": "thank_you", "label": { "en": "Thank you" } },
+    { "id": "yes", "label": { "en": "Yes" } },
+    { "id": "no", "label": { "en": "No" } },
+    { "id": "please_repeat", "label": { "en": "Please repeat" } },
+    { "id": "i_want_work", "label": { "en": "I want work" } },
+    { "id": "my_name", "label": { "en": "My name is" } },
+    { "id": "wait", "label": { "en": "Wait" } }
+  ],
+  "none": {
+    "id": "none",
+    "label": { "en": "None (not a sign)" },
+    "hint": "Record relaxed hands, random hand shapes, transitions between signs, and signs that are NOT in the vocabulary. This class teaches the model to say Not recognized."
+  }
+}
