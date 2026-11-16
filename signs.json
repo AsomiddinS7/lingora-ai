@@ -2,18 +2,82 @@
   "version": 1,
   "note": "PLACEHOLDER vocabulary. Replace with the signs agreed with the consultant. Keep ids lowercase with underscores.",
   "signs": [
-    { "id": "hello", "label": { "en": "Hello" } },
-    { "id": "thank_you", "label": { "en": "Thank you" } },
-    { "id": "yes", "label": { "en": "Yes" } },
-    { "id": "no", "label": { "en": "No" } },
-    { "id": "please_repeat", "label": { "en": "Please repeat" } },
-    { "id": "i_want_work", "label": { "en": "I want work" } },
-    { "id": "my_name", "label": { "en": "My name is" } },
-    { "id": "wait", "label": { "en": "Wait" } }
+    {
+      "id": "hello",
+      "label": {
+        "en": "Hello",
+        "ru": "Здравствуйте",
+        "uz": "Salom"
+      }
+    },
+    {
+      "id": "thank_you",
+      "label": {
+        "en": "Thank you",
+        "ru": "Спасибо",
+        "uz": "Rahmat"
+      }
+    },
+    {
+      "id": "yes",
+      "label": {
+        "en": "Yes",
+        "ru": "Да",
+        "uz": "Ha"
+      }
+    },
+    {
+      "id": "no",
+      "label": {
+        "en": "No",
+        "ru": "Нет",
+        "uz": "Yoʻq"
+      }
+    },
+    {
+      "id": "please_repeat",
+      "label": {
+        "en": "Please repeat",
+        "ru": "Повторите, пожалуйста",
+        "uz": "Iltimos, takrorlang"
+      }
+    },
+    {
+      "id": "i_want_work",
+      "label": {
+        "en": "I want work",
+        "ru": "Я хочу работать",
+        "uz": "Men ish istayman"
+      }
+    },
+    {
+      "id": "my_name",
+      "label": {
+        "en": "My name is",
+        "ru": "Меня зовут",
+        "uz": "Mening ismim"
+      }
+    },
+    {
+      "id": "wait",
+      "label": {
+        "en": "Wait",
+        "ru": "Подождите",
+        "uz": "Kuting"
+      }
+    }
   ],
   "none": {
     "id": "none",
-    "label": { "en": "None (not a sign)" },
-    "hint": "Record relaxed hands, random hand shapes, transitions between signs, and signs that are NOT in the vocabulary. This class teaches the model to say Not recognized."
+    "label": {
+      "en": "None (not a sign)",
+      "ru": "Нет жеста",
+      "uz": "Imo emas"
+    },
+    "hint": {
+      "en": "Record relaxed hands, random hand shapes, transitions between signs, and signs that are NOT in the vocabulary. This class teaches the model to say Not recognized.",
+      "ru": "Записывайте расслабленные руки, случайные формы руки, переходы между жестами и жесты, которых НЕТ в списке. Этот класс учит модель говорить «Не распознано».",
+      "uz": "Boʻshashgan qoʻllar, tasodifiy qoʻl shakllari, imolar orasidagi oʻtishlar va roʻyxatda YOʻQ imolarni yozing. Bu sinf modelga «Tanilmadi» deyishni oʻrgatadi."
+    }
   }
 }
