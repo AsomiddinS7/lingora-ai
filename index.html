@@ -60,6 +60,7 @@ table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{text-align:left
   <label for="sign" data-i18n="signToRecord"></label>
   <select id="sign"></select>
   <p class="hint" id="signHint"></p>
+  <p class="note" id="signsWarn" data-i18n="signsMissing" hidden></p>
   <div class="row">
     <div><label for="lighting" data-i18n="lighting"></label><select id="lighting"><option value="normal" data-i18n="lNormal"></option><option value="bright" data-i18n="lBright"></option><option value="dim" data-i18n="lDim"></option><option value="backlit" data-i18n="lBacklit"></option></select></div>
     <div><label for="distance" data-i18n="distance"></label><select id="distance"><option value="mid" data-i18n="dMid"></option><option value="near" data-i18n="dNear"></option><option value="far" data-i18n="dFar"></option></select></div>
@@ -125,8 +126,11 @@ function initLangSelect() {
   sel.onchange = () => { lang = sel.value; try { localStorage.setItem(LANG_KEY, lang); } catch { /* ignore */ } applyLang(); };
 }
 
+let signsOk = false;
 async function loadConfig() {
-  try { const r = await fetch("../signs.json", { cache: "no-store" }); if (r.ok) cfg = await r.json(); } catch { /* use fallback */ }
+  for (const url of ["../signs.json", "./signs.json"]) {
+    try { const r = await fetch(url, { cache: "no-store" }); if (r.ok) { cfg = await r.json(); signsOk = true; return; } } catch { /* try the next place */ }
+  }
 }
 function showHint() {
   $("signHint").textContent = $("sign").value === cfg.none.id ? pick(cfg.none.hint) : t("signHint");
@@ -144,7 +148,8 @@ function ready() {
 }
 function refresh() {
   const r = ready();
-  $("recBtn").disabled = busy || !(r.consent && r.idOk && r.cam);
+  $("recBtn").disabled = busy || !signsOk || !(r.consent && r.idOk && r.cam);
+  $("signsWarn").hidden = signsOk;
   $("undoBtn").disabled = busy || !lastTake;
   $("exportBtn").disabled = busy || samples.length === 0;
   $("clearBtn").disabled = busy || samples.length === 0;
@@ -219,6 +224,7 @@ function loop() {
 
 async function record() {
   const r = ready();
+  if (!signsOk) return say("signsMissing", "err");
   if (!r.consent) return say("needConsent", "warn");
   if (!r.idOk) return say("needCode", "warn");
   busy = true; refresh();
